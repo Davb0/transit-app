@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Transit Arrivals</title>
-  <!-- Link to app.css -->
-  <link rel="stylesheet" href="App.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Transit</title>
+    <link rel="stylesheet" href="../src/styles/App.css">
 </head>
 <body>
-  <h1>Live Transit Arrivals</h1>
-  <ul id="transit-list">
-    <!-- Transit list items will be inserted here -->
-  </ul>
+    <header>
+        <h1>Live Transit App</h1>
+    </header>
+    <main>
+        <section id="transit-info">
+            <h2>Upcoming Transit</h2>
+            <ul id="transit-list">
+                <!-- Transit data will be inserted here dynamically -->
+            </ul>
+        </section>
+        <section id="map">
+            <h2>Map View</h2>
+            <div id="map-container">
+                <!-- You can add a map later using a library like Leaflet.js -->
+            </div>
+        </section>
+    </main>
 
-  <script src="App.js"></script>
+    <script src="../src/App.js"></script>
 </body>
 </html>
