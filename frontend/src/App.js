@@ -1,22 +1,27 @@
-// Fetch the arrivals data from the backend
-function fetchArrivals() {
-  fetch('http://localhost:5000/api/arrivals')  // Adjust if the backend is deployed
-    .then(response => response.json())
-    .then(data => {
-      const transitList = document.getElementById('transit-list');
-      transitList.innerHTML = '';  // Clear existing data
+document.addEventListener("DOMContentLoaded", function () {
+    const transitList = document.getElementById("transit-list");
 
-      // Create list items for each arrival
-      data.forEach(arrival => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `<strong>${arrival.route}</strong> - ${arrival.time} minutes away`;
-        transitList.appendChild(listItem);
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching transit data:', error);
+    // Example static data (replace with real API data later)
+    const transitData = [
+        { id: 1, name: "Bus 1", arrival: "5:30 PM" },
+        { id: 2, name: "Tram A", arrival: "5:45 PM" },
+        { id: 3, name: "Bus 3", arrival: "6:00 PM" },
+    ];
+
+    // Populate the list with transit data
+    transitData.forEach((transit) => {
+        const li = document.createElement("li");
+        li.textContent = `${transit.name} - Arrives at: ${transit.arrival}`;
+        transitList.appendChild(li);
     });
-}
 
-// Call the function to fetch arrivals when the page loads
-document.addEventListener('DOMContentLoaded', fetchArrivals);
+    // Add logic for Map (Optional)
+    // Initialize the map
+const map = L.map('map-container').setView([51.505, -0.09], 13);
+
+// Add OpenStreetMap tiles to the map
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+});
