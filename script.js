@@ -39,4 +39,3 @@ tramStops.forEach(stop => {
         .addTo(map)
         .bindPopup(`${stop.name} (Tram Stop)`);
 });
-
