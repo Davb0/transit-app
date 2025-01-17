@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transit Map</title>
+    <!-- Link to Leaflet CSS for map styling -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Link to custom styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
+
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Transit Map</h1>
+        <p>Find your location and explore bus and tram routes near you.</p>
     </header>
-    <div id="map"></div>
-    <!-- Locate Me Button -->
-    <button id="locate-me">Locate Me</button>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Map container -->
+        <div id="map"></div>
+        <!-- Locate Me button -->
+        <button id="locate-me">Locate Me</button>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Transit Map. Powered by OpenStreetMap and Leaflet.js.</p>
+    </footer>
+
+    <!-- Link to Leaflet.js for map functionality -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Link to custom script -->
     <script src="script.js"></script>
 </body>
+
 </html>
