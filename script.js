@@ -17,6 +17,9 @@ const redIcon = L.icon({
     popupAnchor: [0, -32],                 // Position of the popup relative to the icon
 });
 
+// Debug: Check if the icon is loaded correctly
+console.log("Red marker icon:", redIcon);
+
 // Sample bus and tram station coordinates (Replace these with actual coordinates)
 const stations = [
     { name: "Bus Station 1", lat: 51.505, lng: -0.09 },
@@ -91,4 +94,3 @@ document.getElementById('locate-me').addEventListener('click', () => {
         console.error("Geolocation not supported by browser.");
     }
 });
-
