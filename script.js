@@ -9,6 +9,33 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Debug: Log when the map has loaded successfully
 console.log("Map initialized successfully.");
 
+// Create a custom icon for bus and tram stations
+const redIcon = L.icon({
+    iconUrl: 'images/redmarkericon.png',   // Path to the red marker icon
+    iconSize: [32, 32],                    // Size of the marker
+    iconAnchor: [16, 32],                  // Position of the marker's "tip" (where the icon points)
+    popupAnchor: [0, -32],                 // Position of the popup relative to the icon
+});
+
+// Sample bus and tram station coordinates (Replace these with actual coordinates)
+const stations = [
+    { name: "Bus Station 1", lat: 51.505, lng: -0.09 },
+    { name: "Tram Station 1", lat: 51.515, lng: -0.1 },
+    { name: "Bus Station 2", lat: 51.525, lng: -0.11 },
+    { name: "Tram Station 2", lat: 51.535, lng: -0.12 },
+];
+
+// Add the stations to the map with custom red markers
+stations.forEach(station => {
+    const { name, lat, lng } = station;
+
+    // Add a custom marker with the red icon for each station
+    const marker = L.marker([lat, lng], { icon: redIcon }).addTo(map);
+
+    // Bind a popup to each marker
+    marker.bindPopup(`<b>${name}</b>`).openPopup();
+});
+
 // Function to handle the "Locate Me" button functionality
 document.getElementById('locate-me').addEventListener('click', () => {
     console.log("Locate Me button clicked.");
@@ -64,3 +91,4 @@ document.getElementById('locate-me').addEventListener('click', () => {
         console.error("Geolocation not supported by browser.");
     }
 });
+
